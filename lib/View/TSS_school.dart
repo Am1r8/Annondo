@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'global.dart' as gl;
+import 'package:intl/intl.dart';
+
 class thornhill_inf extends StatefulWidget {
   const thornhill_inf({ Key? key }) : super(key: key);
 
@@ -13,6 +15,8 @@ class _thornhill_infState extends State<thornhill_inf> {
   final List<bool> _isExpanded = List.generate(10, (_) => false);
   List week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
   final _database = FirebaseDatabase.instance.ref();
+  var date = DateTime.now();
+  late String day = DateFormat('EEEE').format(date);
 
   _tittleMon() {
       _database.child('Monday/tittle').onValue.listen((event) {
@@ -137,6 +141,17 @@ class _thornhill_infState extends State<thornhill_inf> {
 
   @override
   Widget build(BuildContext context) {
+    if (day == 'Monday'){
+      _isExpanded[0] = true;
+    } else if (day == 'Tuesday'){
+      _isExpanded[1] = true;
+    } else if (day == 'Wednesday'){
+      _isExpanded[2] = true;
+    } else if (day == 'Thursday'){
+      _isExpanded[3] = true;
+    } else if (day == 'Friday'){
+      _isExpanded[4] = true;
+    }
     return RefreshIndicator(
       onRefresh: () async {
         await Future.delayed(const Duration(seconds: 2));
