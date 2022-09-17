@@ -34,7 +34,9 @@ class _thornhill_infState extends State<thornhill_inf> {
             gl.monDes = _displayText;
           });
         });
-        return gl.monDes;
+        List<String> monDes = gl.monDes.split('.');
+        String monDes1 = monDes.join("\n");
+        return monDes1;
     }
     _tittleTue() {
       _database.child('Tuesday/tittle').onValue.listen((event) {
@@ -56,7 +58,9 @@ class _thornhill_infState extends State<thornhill_inf> {
             gl.tueDes = _displayText;
           });
         });
-        return gl.tueDes;
+        List<String> monDes = gl.monDes.split('.');
+        String monDes1 = monDes.join("\n");
+        return monDes1;
     }
     _tittleWed() {
       _database.child('Wednesday/tittle').onValue.listen((event) {
@@ -78,7 +82,9 @@ class _thornhill_infState extends State<thornhill_inf> {
             gl.wenDes = _displayText;
           });
         });
-        return gl.wenDes;
+        List<String> wedDes = gl.wenDes.split('.');
+        String wedDes1 = wedDes.join(".\n");
+        return wedDes1;
     }
     _tittleThur() {
       _database.child('Thursday/tittle').onValue.listen((event) {
