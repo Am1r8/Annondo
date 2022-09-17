@@ -124,20 +124,20 @@ class _thornhill_infState extends State<thornhill_inf> {
         });
         return gl.friDes;
     }
-    
+
   @override
-  Widget build(BuildContext context) {    
+  Widget build(BuildContext context) {
     return RefreshIndicator(
       onRefresh: () async {
         await Future.delayed(const Duration(seconds: 2));
       },
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
         resizeToAvoidBottomInset: true,
         appBar: AppBar(
           centerTitle: true,
-          backgroundColor: const Color.fromRGBO(8, 65, 92, 1),
-          title: const Text("Thornhill School", style: TextStyle(fontSize: 20, fontFamily: 'Lato-bold'),),
+          backgroundColor: const Color.fromRGBO(32, 78, 74, 1),
+          title: const Text("Thornhill Secondary School", style: TextStyle(fontSize: 20, fontFamily: 'Lato-bold'),),
         ),
           body: Center(
           child: SingleChildScrollView(
@@ -148,10 +148,11 @@ class _thornhill_infState extends State<thornhill_inf> {
                 const Text('Announcements:', style: TextStyle(fontSize: 25, fontFamily: 'Lato-bold')),
                 const SizedBox(height: 30),
                 ExpansionTile(
-                  backgroundColor: const Color.fromRGBO(33, 137, 126, 1),
+
+                  backgroundColor: const Color.fromRGBO(46, 147, 60, 1),
                   textColor: const Color.fromRGBO(255, 255, 255, 1),
                   iconColor: const Color.fromRGBO(255, 255, 255, 1),
-                  title: const Text('Monday', style: TextStyle(fontSize: 25, fontFamily: 'Lato-bold')),
+                  title: const Text('Monday', style: TextStyle(fontSize: 25, fontFamily: 'Lato-bold'),  textAlign: TextAlign.center),
                   children: <Widget>[
                     Padding(
                       padding: const EdgeInsets.all(20.0),
@@ -176,10 +177,10 @@ class _thornhill_infState extends State<thornhill_inf> {
                 ),
                 const SizedBox(height: 30),
                 ExpansionTile(
-                  backgroundColor: const Color.fromRGBO(33, 137, 126, 1),
+                  backgroundColor: const Color.fromRGBO(46, 147, 60, 1),
                   textColor: const Color.fromRGBO(255, 255, 255, 1),
                   iconColor: const Color.fromRGBO(255, 255, 255, 1),
-                  title: const Text('Tuesday', style: TextStyle(fontSize: 25, fontFamily: 'Lato-bold')),
+                  title: const Text('Tuesday', style: TextStyle(fontSize: 25, fontFamily: 'Lato-bold'),  textAlign: TextAlign.center),
                   children: <Widget>[
                     Padding(
                       padding: const EdgeInsets.all(20.0),
@@ -204,10 +205,10 @@ class _thornhill_infState extends State<thornhill_inf> {
                 ),
                 const SizedBox(height: 30),
                 ExpansionTile(
-                  backgroundColor: const Color.fromRGBO(33, 137, 126, 1),
+                  backgroundColor: const Color.fromRGBO(46, 147, 60, 1),
                   textColor: const Color.fromRGBO(255, 255, 255, 1),
                   iconColor: const Color.fromRGBO(255, 255, 255, 1),
-                  title: const Text('Wednesday', style: TextStyle(fontSize: 25, fontFamily: 'Lato-bold')),
+                  title: const Text('Wednesday', style: TextStyle(fontSize: 25, fontFamily: 'Lato-bold'),  textAlign: TextAlign.center),
                   children: <Widget>[
                     Padding(
                       padding: const EdgeInsets.all(20.0),
@@ -232,10 +233,10 @@ class _thornhill_infState extends State<thornhill_inf> {
                 ),
                 const SizedBox(height: 30),
                 ExpansionTile(
-                  backgroundColor: const Color.fromRGBO(33, 137, 126, 1),
+                  backgroundColor: const Color.fromRGBO(46, 147, 60, 1),
                   textColor: const Color.fromRGBO(255, 255, 255, 1),
                   iconColor: const Color.fromRGBO(255, 255, 255, 1),
-                  title: const Text('Thursday', style: TextStyle(fontSize: 25, fontFamily: 'Lato-bold')),
+                  title: const Text('Thursday', style: TextStyle(fontSize: 25, fontFamily: 'Lato-bold'),  textAlign: TextAlign.center),
                   children: <Widget>[
                     Padding(
                       padding: const EdgeInsets.all(20.0),
@@ -260,10 +261,10 @@ class _thornhill_infState extends State<thornhill_inf> {
                 ),
                 const SizedBox(height: 30),
                 ExpansionTile(
-                  backgroundColor: const Color.fromRGBO(33, 137, 126, 1),
+                  backgroundColor: const Color.fromRGBO(46, 147, 60, 1),
                   textColor: const Color.fromRGBO(255, 255, 255, 1),
                   iconColor: const Color.fromRGBO(255, 255, 255, 1),
-                  title: const Text('Friday', style: TextStyle(fontSize: 25, fontFamily: 'Lato-bold')),
+                  title: const Text('Friday', style: TextStyle(fontSize: 25, fontFamily: 'Lato-bold'), textAlign: TextAlign.center),
                   children: <Widget>[
                     Padding(
                       padding: const EdgeInsets.all(20.0),
@@ -292,7 +293,7 @@ class _thornhill_infState extends State<thornhill_inf> {
                     primary: Colors.white,
                     onSurface: Colors.white,
                     shadowColor: Colors.black,
-                    backgroundColor: const Color.fromARGB(250, 8, 65, 92),
+                    backgroundColor: Color.fromARGB(255, 41, 112, 69),
                     padding: const EdgeInsets.all(10.0),
                     maximumSize: const Size.fromWidth(200.0),
                     animationDuration: const Duration(milliseconds: 100),
@@ -308,7 +309,7 @@ class _thornhill_infState extends State<thornhill_inf> {
                       } else {
                         Navigator.of(context).pushNamedAndRemoveUntil('/teachersAuth', (route) => false);
                       }
-                      
+
                   },
                 ),
               ],
