@@ -44,6 +44,7 @@ dependencies:
   http: ^0.13.4
   otp: ^3.0.2
   shared_preferences: ^2.0.13
+  intl: ^0.17.0
 
 flutter_icons:
   android: true

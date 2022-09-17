@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'global.dart' as gl;
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 
 class ChangeDatabase extends StatefulWidget {
@@ -12,11 +13,13 @@ class ChangeDatabase extends StatefulWidget {
 }
 
 class _ChangeDatabaseState extends State<ChangeDatabase> {
+
   final _database = FirebaseDatabase.instance.ref();
   late final TextEditingController _tittle;
   late final TextEditingController _des;
-  String dropdownvalue = 'Monday';
-  String stats = ''; 
+
+  String dropdownvalue = "Monday";
+  String stats = '';
   var week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
   @override
   void initState() {
@@ -34,6 +37,12 @@ class _ChangeDatabaseState extends State<ChangeDatabase> {
 
   @override
   Widget build(BuildContext context) {
+    var date = DateTime.now();
+    late String day = DateFormat('EEEE').format(date);
+    if (day == 'Saturday' || day == 'Sunday') {
+      day = 'Monday';
+    }
+    dropdownvalue = day;
     _tittleMon() {
       _database.child('Monday/tittle').onValue.listen((event) {
           final tittle = event.snapshot.value;
@@ -144,8 +153,9 @@ class _ChangeDatabaseState extends State<ChangeDatabase> {
         });
         return gl.friDes;
       }
-      
+
     return RefreshIndicator(
+
       onRefresh: () async {
         await Future.delayed(const Duration(seconds: 2));
       },
@@ -174,7 +184,7 @@ class _ChangeDatabaseState extends State<ChangeDatabase> {
                     iconEnabledColor: const Color.fromRGBO(204, 41, 54, 1),
                     style: const TextStyle(fontSize: 22, fontFamily: 'Lato-bold', color: Colors.black),
                     value: dropdownvalue,
-                    icon: const Icon(Icons.keyboard_arrow_down),    
+                    icon: const Icon(Icons.keyboard_arrow_down),
                     items: week.map((String items) {
                       return DropdownMenuItem(
                         value: items,
