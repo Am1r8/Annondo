@@ -61,9 +61,9 @@ class _TeacherLoginAUthState extends State<TeacherLoginAUth> {
     super.dispose();
   }
 
-  String dropdownvalue = 'School';
+  String dropdownvalue = 'Thornhill Secondary School';
   String stats = 'None';
-  var items = ['Thornhill Secondary School', 'Your school is not available yet', 'School'];
+  var items = ['Thornhill Secondary School', 'Your school is not available yet'];
 
 
 
