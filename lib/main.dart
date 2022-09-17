@@ -23,9 +23,8 @@ void main() async{
         '/school_log': (context) => const loginApp12(),
         '/TSS_school': (context) => const thornhill_inf(),
         '/teachersAuth': (context) => const TeacherLoginAUth(),
-        '/changeAuthAnnouncement': (context) => const ChangeDatabase(),
+        '/changeAuthAnnouncement': (context) => const ChangeDatabase()
       }
     )
   );
 }
-
