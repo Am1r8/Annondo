@@ -62,7 +62,7 @@ class _TeacherLoginAUthState extends State<TeacherLoginAUth> {
   }
 
   String dropdownvalue = 'School';
-  String stats = 'None'; 
+  String stats = 'None';
   var items = ['Thornhill Secondary School', 'Your school is not available yet', 'School'];
 
 
@@ -73,7 +73,7 @@ class _TeacherLoginAUthState extends State<TeacherLoginAUth> {
     return Scaffold(
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(8, 65, 92, 1),
+        backgroundColor: const Color.fromRGBO(32, 78, 74, 1),
         title: const Text("Teacher login", style: TextStyle(fontSize: 20, fontFamily: 'Lato-bold'),),
         leading: BackButton(
           onPressed: () {
@@ -95,7 +95,7 @@ class _TeacherLoginAUthState extends State<TeacherLoginAUth> {
                 const SizedBox(height: 20),
                   TextField(
                     controller: _email,
-                    cursorColor: const Color.fromRGBO(8, 65, 92, 1),
+                    cursorColor: const Color.fromRGBO(46, 147, 60, 1),
                     keyboardType: TextInputType.emailAddress,
                     enableSuggestions: false,
                     autocorrect: false,
@@ -106,7 +106,7 @@ class _TeacherLoginAUthState extends State<TeacherLoginAUth> {
                     style: const TextStyle(
                       fontSize: 18,
                       fontFamily: 'Lato',
-                      color: const Color.fromRGBO(8, 65, 92, 1),
+                      color: const Color.fromRGBO(0,0,0, 1),
                     ),
                     decoration: InputDecoration(
                       labelText: 'Email',
@@ -114,7 +114,7 @@ class _TeacherLoginAUthState extends State<TeacherLoginAUth> {
                     ),
                   ),
                   TextField(
-                    cursorColor: const Color.fromRGBO(8, 65, 92, 1),
+                    cursorColor: const Color.fromRGBO(46, 147, 60, 1),
                     controller: _password,
                     obscureText: true,
                     scrollPadding: const EdgeInsets.all(10.0),
@@ -126,7 +126,7 @@ class _TeacherLoginAUthState extends State<TeacherLoginAUth> {
                     style: const TextStyle(
                       fontSize: 18,
                       fontFamily: 'Lato',
-                      color: const Color.fromRGBO(8, 65, 92, 1),
+                      color: const Color.fromRGBO(0,0,0, 1),
                     ),
                     decoration: InputDecoration(
                       labelText: 'Password',
@@ -138,21 +138,21 @@ class _TeacherLoginAUthState extends State<TeacherLoginAUth> {
                   const SizedBox(height: 20),
                   DropdownButton(
                     elevation: 15,
-                    iconDisabledColor: Colors.black,
+                    iconDisabledColor: Colors.white,
                     iconSize: 30,
-                    dropdownColor: Colors.pink[100],
+                    dropdownColor: const Color.fromRGBO(247, 198, 71, 1),
                     borderRadius: BorderRadius.circular(10),
-                    iconEnabledColor: const Color.fromRGBO(204, 41, 54, 1),
+                    iconEnabledColor: const Color.fromRGBO(32, 78, 74, 1),
                     style: const TextStyle(fontSize: 17, fontFamily: 'Lato-bold', color: Colors.black),
                     value: dropdownvalue,
-                    icon: const Icon(Icons.keyboard_arrow_down),    
+                    icon: const Icon(Icons.keyboard_arrow_down),
                     items: items.map((String items) {
                       return DropdownMenuItem(
                         value: items,
                         child: Text(items),
                       );
                     }).toList(),
-                    onChanged: (String? newValue) { 
+                    onChanged: (String? newValue) {
                       if (!mounted) return;
                       setState(() {
                         dropdownvalue = newValue!;
@@ -165,7 +165,7 @@ class _TeacherLoginAUthState extends State<TeacherLoginAUth> {
                       primary: Colors.white,
                       onSurface: Colors.white,
                       shadowColor: Colors.black,
-                      backgroundColor: Color.fromARGB(250, 8, 65, 92),
+                      backgroundColor: Color.fromARGB(255, 32, 78, 74),
                       padding: const EdgeInsets.all(10.0),
                       maximumSize: const Size.fromWidth(200.0),
                       animationDuration: const Duration(milliseconds: 100),
@@ -213,7 +213,7 @@ class _TeacherLoginAUthState extends State<TeacherLoginAUth> {
                                 _validate = true;
                                 _errorMessage = 'Network request failed please try again later';
                               });
-                            } 
+                            }
                           }
                         } else {
                           setState(() {
