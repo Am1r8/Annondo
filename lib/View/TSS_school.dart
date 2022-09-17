@@ -159,8 +159,8 @@ class _thornhill_infState extends State<thornhill_inf> {
                 const SizedBox(height: 30),
                 ExpansionTile(
 
-                  backgroundColor: const Color.fromRGBO(46, 147, 60, 1),
-                  textColor: const Color.fromRGBO(255, 255, 255, 1),
+                  backgroundColor: const Color.fromRGBO(247, 198, 71, 1),
+                  textColor: const Color.fromRGBO(0,0,0, 1),
                   iconColor: const Color.fromRGBO(255, 255, 255, 1),
                   title: const Text('Monday', style: TextStyle(fontSize: 25, fontFamily: 'Lato-bold'),  textAlign: TextAlign.center),
                   children: <Widget>[
@@ -168,9 +168,9 @@ class _thornhill_infState extends State<thornhill_inf> {
                       padding: const EdgeInsets.all(20.0),
                       child: Column(
                         children: [
-                          Text(_tittleMon(), style: const TextStyle(fontSize: 22, fontFamily: 'Lato-bold', color: Color.fromRGBO(255, 255, 255, 1)),  textAlign: TextAlign.center),
+                          Text(_tittleMon(), style: const TextStyle(fontSize: 22, fontFamily: 'Lato-bold', color: Color.fromRGBO(0,0,0, 1)),  textAlign: TextAlign.center),
                           const SizedBox(height: 15),
-                          Text(_descriptionMon(), style: const TextStyle(fontSize: 15, fontFamily: 'Lato', color: Color.fromRGBO(255, 255, 255, 1)), textAlign: TextAlign.center),
+                          Text(_descriptionMon(), style: const TextStyle(fontSize: 15, fontFamily: 'Lato', color: Color.fromRGBO(0,0,0, 1)), textAlign: TextAlign.center),
                           const SizedBox(height: 15),
                         ],
                       ),
@@ -187,8 +187,8 @@ class _thornhill_infState extends State<thornhill_inf> {
                 ),
                 const SizedBox(height: 30),
                 ExpansionTile(
-                  backgroundColor: const Color.fromRGBO(46, 147, 60, 1),
-                  textColor: const Color.fromRGBO(255, 255, 255, 1),
+                  backgroundColor: const Color.fromRGBO(247, 198, 71, 1),
+                  textColor: const Color.fromRGBO(0,0,0, 1),
                   iconColor: const Color.fromRGBO(255, 255, 255, 1),
                   title: const Text('Tuesday', style: TextStyle(fontSize: 25, fontFamily: 'Lato-bold'),  textAlign: TextAlign.center),
                   children: <Widget>[
@@ -196,9 +196,9 @@ class _thornhill_infState extends State<thornhill_inf> {
                       padding: const EdgeInsets.all(20.0),
                       child: Column(
                         children: [
-                          Text(_tittleTue(), style: const TextStyle(fontSize: 22, fontFamily: 'Lato-bold', color: Color.fromRGBO(255, 255, 255, 1)),  textAlign: TextAlign.center),
+                          Text(_tittleTue(), style: const TextStyle(fontSize: 22, fontFamily: 'Lato-bold', color: Color.fromRGBO(0,0,0, 1)),  textAlign: TextAlign.center),
                           const SizedBox(height: 15),
-                          Text(_descriptionTue(), style: const TextStyle(fontSize: 15, fontFamily: 'Lato', color: Color.fromRGBO(255, 255, 255, 1)), textAlign: TextAlign.center),
+                          Text(_descriptionTue(), style: const TextStyle(fontSize: 15, fontFamily: 'Lato', color: Color.fromRGBO(0,0,0, 1)), textAlign: TextAlign.center),
                           const SizedBox(height: 15),
                         ],
                       ),
@@ -215,8 +215,8 @@ class _thornhill_infState extends State<thornhill_inf> {
                 ),
                 const SizedBox(height: 30),
                 ExpansionTile(
-                  backgroundColor: const Color.fromRGBO(46, 147, 60, 1),
-                  textColor: const Color.fromRGBO(255, 255, 255, 1),
+                  backgroundColor: const Color.fromRGBO(247, 198, 71, 1),
+                  textColor: const Color.fromRGBO(0,0,0, 1),
                   iconColor: const Color.fromRGBO(255, 255, 255, 1),
                   title: const Text('Wednesday', style: TextStyle(fontSize: 25, fontFamily: 'Lato-bold'),  textAlign: TextAlign.center),
                   children: <Widget>[
@@ -224,9 +224,9 @@ class _thornhill_infState extends State<thornhill_inf> {
                       padding: const EdgeInsets.all(20.0),
                       child: Column(
                         children: [
-                          Text(_tittleWed(), style: const TextStyle(fontSize: 22, fontFamily: 'Lato-bold', color: Color.fromRGBO(255, 255, 255, 1)),  textAlign: TextAlign.center),
+                          Text(_tittleWed(), style: const TextStyle(fontSize: 22, fontFamily: 'Lato-bold', color: Color.fromRGBO(0,0,0, 1)),  textAlign: TextAlign.center),
                           const SizedBox(height: 15),
-                          Text(_descriptionWed(), style: const TextStyle(fontSize: 15, fontFamily: 'Lato', color: Color.fromRGBO(255, 255, 255, 1)), textAlign: TextAlign.center),
+                          Text(_descriptionWed(), style: const TextStyle(fontSize: 15, fontFamily: 'Lato', color: Color.fromRGBO(0,0,0, 1)), textAlign: TextAlign.center),
                           const SizedBox(height: 15),
                         ],
                       ),
@@ -243,8 +243,8 @@ class _thornhill_infState extends State<thornhill_inf> {
                 ),
                 const SizedBox(height: 30),
                 ExpansionTile(
-                  backgroundColor: const Color.fromRGBO(46, 147, 60, 1),
-                  textColor: const Color.fromRGBO(255, 255, 255, 1),
+                  backgroundColor: const Color.fromRGBO(247, 198, 71, 1),
+                  textColor: const Color.fromRGBO(0,0,0, 1),
                   iconColor: const Color.fromRGBO(255, 255, 255, 1),
                   title: const Text('Thursday', style: TextStyle(fontSize: 25, fontFamily: 'Lato-bold'),  textAlign: TextAlign.center),
                   children: <Widget>[
@@ -252,9 +252,9 @@ class _thornhill_infState extends State<thornhill_inf> {
                       padding: const EdgeInsets.all(20.0),
                       child: Column(
                         children: [
-                          Text(_tittleThur(), style: const TextStyle(fontSize: 22, fontFamily: 'Lato-bold', color: Color.fromRGBO(255, 255, 255, 1)),  textAlign: TextAlign.center),
+                          Text(_tittleThur(), style: const TextStyle(fontSize: 22, fontFamily: 'Lato-bold', color: Color.fromRGBO(0,0,0, 1)),  textAlign: TextAlign.center),
                           const SizedBox(height: 15),
-                          Text(_descriptionThur(), style: const TextStyle(fontSize: 15, fontFamily: 'Lato', color: Color.fromRGBO(255, 255, 255, 1)), textAlign: TextAlign.center),
+                          Text(_descriptionThur(), style: const TextStyle(fontSize: 15, fontFamily: 'Lato', color: Color.fromRGBO(0,0,0, 1)), textAlign: TextAlign.center),
                           const SizedBox(height: 15),
                         ],
                       ),
@@ -271,8 +271,8 @@ class _thornhill_infState extends State<thornhill_inf> {
                 ),
                 const SizedBox(height: 30),
                 ExpansionTile(
-                  backgroundColor: const Color.fromRGBO(46, 147, 60, 1),
-                  textColor: const Color.fromRGBO(255, 255, 255, 1),
+                  backgroundColor: const Color.fromARGB(255, 247, 198, 71),
+                  textColor: const Color.fromRGBO(0,0,0, 1),
                   iconColor: const Color.fromRGBO(255, 255, 255, 1),
                   title: const Text('Friday', style: TextStyle(fontSize: 25, fontFamily: 'Lato-bold'), textAlign: TextAlign.center),
                   children: <Widget>[
@@ -280,9 +280,9 @@ class _thornhill_infState extends State<thornhill_inf> {
                       padding: const EdgeInsets.all(20.0),
                       child: Column(
                         children: [
-                          Text(_tittleFri(), style: const TextStyle(fontSize: 22, fontFamily: 'Lato-bold', color: Color.fromRGBO(255, 255, 255, 1)),  textAlign: TextAlign.center),
+                          Text(_tittleFri(), style: const TextStyle(fontSize: 22, fontFamily: 'Lato-bold', color: Color.fromRGBO(0,0,0, 1)),  textAlign: TextAlign.center),
                           const SizedBox(height: 15),
-                          Text(_descriptionFri(), style: const TextStyle(fontSize: 15, fontFamily: 'Lato', color: Color.fromRGBO(255, 255, 255, 1)), textAlign: TextAlign.center),
+                          Text(_descriptionFri(), style: const TextStyle(fontSize: 15, fontFamily: 'Lato', color: Color.fromRGBO(0,0,0, 1)), textAlign: TextAlign.center),
                           const SizedBox(height: 15),
                         ],
                       ),
