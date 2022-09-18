@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'global.dart' as gl;
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+
 
 
 class ChangeDatabase extends StatefulWidget {
@@ -34,6 +36,12 @@ class _ChangeDatabaseState extends State<ChangeDatabase> {
 
   @override
   Widget build(BuildContext context) {
+    var date = DateTime.now();
+    late String day = DateFormat('EEEE').format(date);
+    if (day == 'Saturday' || day == 'Sunday') {
+      day = 'Monday';
+    }
+
   _tittleMon() {
       _database.child('Monday/tittle').onValue.listen((event) {
           final tittle = event.snapshot.value;
@@ -157,6 +165,7 @@ class _ChangeDatabaseState extends State<ChangeDatabase> {
 
     return RefreshIndicator(
       onRefresh: () async {
+        dropdownvalue = day;
         await Future.delayed(const Duration(seconds: 2));
       },
       child: Scaffold(
@@ -164,7 +173,7 @@ class _ChangeDatabaseState extends State<ChangeDatabase> {
         resizeToAvoidBottomInset: true,
         appBar: AppBar(
           centerTitle: true,
-          backgroundColor: const Color.fromRGBO(8, 65, 92, 1),
+          backgroundColor: const Color.fromRGBO(32, 78, 74, 1),
           title: const Text("Change Data", style: TextStyle(fontSize: 20, fontFamily: 'Lato-bold'),),
         ),
         body: Center(
@@ -179,9 +188,9 @@ class _ChangeDatabaseState extends State<ChangeDatabase> {
                     elevation: 15,
                     iconDisabledColor: Colors.black,
                     iconSize: 30,
-                    dropdownColor: const Color.fromARGB(255, 181, 255, 225),
+                    dropdownColor: const Color.fromARGB(255, 247, 198, 71),
                     borderRadius: BorderRadius.circular(10),
-                    iconEnabledColor: const Color.fromRGBO(204, 41, 54, 1),
+                    iconEnabledColor: const Color.fromRGBO(41, 112, 69, 1),
                     style: const TextStyle(fontSize: 22, fontFamily: 'Lato-bold', color: Colors.black),
                     value: dropdownvalue,
                     icon: const Icon(Icons.keyboard_arrow_down),
@@ -208,7 +217,7 @@ class _ChangeDatabaseState extends State<ChangeDatabase> {
                         Text(_tittleMon(), style: const TextStyle(fontSize: 17, fontFamily: 'Lato'), textAlign: TextAlign.center),
                         const SizedBox(height: 10),
                         TextField(
-                          cursorColor: const Color.fromRGBO(8, 65, 92, 1),
+                          cursorColor: const Color.fromRGBO(32, 78, 74, 1),
                           scrollPadding: const EdgeInsets.all(10.0),
                           enabled: true,
                           scrollPhysics: const BouncingScrollPhysics(),
@@ -232,7 +241,7 @@ class _ChangeDatabaseState extends State<ChangeDatabase> {
                         Text(_descriptionMon(), style: const TextStyle(fontSize: 20, fontFamily: 'Lato'), textAlign: TextAlign.center),
                         const SizedBox(height: 10),
                         TextField(
-                          cursorColor: const Color.fromRGBO(8, 65, 92, 1),
+                          cursorColor: const Color.fromRGBO(32, 78, 74, 1),
                           scrollPadding: const EdgeInsets.all(10.0),
                           enabled: true,
                           scrollPhysics: const BouncingScrollPhysics(),
@@ -258,7 +267,7 @@ class _ChangeDatabaseState extends State<ChangeDatabase> {
                             primary: Colors.white,
                             onSurface: Colors.white,
                             shadowColor: Colors.black,
-                            backgroundColor: const Color.fromARGB(250, 8, 65, 92),
+                            backgroundColor: const Color.fromARGB(250, 32, 78, 74),
                             padding: const EdgeInsets.all(10.0),
                             maximumSize: const Size.fromWidth(200.0),
                             animationDuration: const Duration(milliseconds: 100),
@@ -299,7 +308,7 @@ class _ChangeDatabaseState extends State<ChangeDatabase> {
                         Text(_tittleTue(), style: const TextStyle(fontSize: 17, fontFamily: 'Lato'), textAlign: TextAlign.center),
                         const SizedBox(height: 10),
                         TextField(
-                          cursorColor: const Color.fromRGBO(8, 65, 92, 1),
+                          cursorColor: const Color.fromRGBO(32, 78, 74, 1),
                           scrollPadding: const EdgeInsets.all(10.0),
                           enabled: true,
                           scrollPhysics: const BouncingScrollPhysics(),
@@ -323,7 +332,7 @@ class _ChangeDatabaseState extends State<ChangeDatabase> {
                         Text(_descriptionTue(), style: const TextStyle(fontSize: 20, fontFamily: 'Lato'), textAlign: TextAlign.center),
                         const SizedBox(height: 10),
                         TextField(
-                          cursorColor: const Color.fromRGBO(8, 65, 92, 1),
+                          cursorColor: const Color.fromRGBO(32, 78, 74, 1),
                           scrollPadding: const EdgeInsets.all(10.0),
                           enabled: true,
                           scrollPhysics: const BouncingScrollPhysics(),
@@ -349,7 +358,7 @@ class _ChangeDatabaseState extends State<ChangeDatabase> {
                             primary: Colors.white,
                             onSurface: Colors.white,
                             shadowColor: Colors.black,
-                            backgroundColor: const Color.fromARGB(250, 8, 65, 92),
+                            backgroundColor: const Color.fromARGB(250, 32, 78, 74),
                             padding: const EdgeInsets.all(10.0),
                             maximumSize: const Size.fromWidth(200.0),
                             animationDuration: const Duration(milliseconds: 100),
@@ -390,7 +399,7 @@ class _ChangeDatabaseState extends State<ChangeDatabase> {
                         Text(_tittleWed(), style: const TextStyle(fontSize: 17, fontFamily: 'Lato'), textAlign: TextAlign.center),
                         const SizedBox(height: 10),
                         TextField(
-                          cursorColor: const Color.fromRGBO(8, 65, 92, 1),
+                          cursorColor: const Color.fromRGBO(32, 78, 74, 1),
                           scrollPadding: const EdgeInsets.all(10.0),
                           enabled: true,
                           scrollPhysics: const BouncingScrollPhysics(),
@@ -414,7 +423,7 @@ class _ChangeDatabaseState extends State<ChangeDatabase> {
                         Text(_descriptionWed(), style: const TextStyle(fontSize: 20, fontFamily: 'Lato'), textAlign: TextAlign.center),
                         const SizedBox(height: 10),
                         TextField(
-                          cursorColor: const Color.fromRGBO(8, 65, 92, 1),
+                          cursorColor: const Color.fromRGBO(32, 78, 74, 1),
                           scrollPadding: const EdgeInsets.all(10.0),
                           enabled: true,
                           scrollPhysics: const BouncingScrollPhysics(),
@@ -440,7 +449,7 @@ class _ChangeDatabaseState extends State<ChangeDatabase> {
                             primary: Colors.white,
                             onSurface: Colors.white,
                             shadowColor: Colors.black,
-                            backgroundColor: const Color.fromARGB(250, 8, 65, 92),
+                            backgroundColor: const Color.fromARGB(250, 32, 78, 74),
                             padding: const EdgeInsets.all(10.0),
                             maximumSize: const Size.fromWidth(200.0),
                             animationDuration: const Duration(milliseconds: 100),
@@ -481,7 +490,7 @@ class _ChangeDatabaseState extends State<ChangeDatabase> {
                         Text(_tittleThur(), style: const TextStyle(fontSize: 17, fontFamily: 'Lato'), textAlign: TextAlign.center),
                         const SizedBox(height: 10),
                         TextField(
-                          cursorColor: const Color.fromRGBO(8, 65, 92, 1),
+                          cursorColor: const Color.fromRGBO(32, 78, 74, 1),
                           scrollPadding: const EdgeInsets.all(10.0),
                           enabled: true,
                           scrollPhysics: const BouncingScrollPhysics(),
@@ -505,7 +514,7 @@ class _ChangeDatabaseState extends State<ChangeDatabase> {
                         Text(_descriptionThur(), style: const TextStyle(fontSize: 20, fontFamily: 'Lato'), textAlign: TextAlign.center),
                         const SizedBox(height: 10),
                         TextField(
-                          cursorColor: const Color.fromRGBO(8, 65, 92, 1),
+                          cursorColor: const Color.fromRGBO(32, 78, 74, 1),
                           scrollPadding: const EdgeInsets.all(10.0),
                           enabled: true,
                           scrollPhysics: const BouncingScrollPhysics(),
@@ -530,7 +539,7 @@ class _ChangeDatabaseState extends State<ChangeDatabase> {
                             primary: Colors.white,
                             onSurface: Colors.white,
                             shadowColor: Colors.black,
-                            backgroundColor: const Color.fromARGB(250, 8, 65, 92),
+                            backgroundColor: const Color.fromARGB(250, 32, 78, 74),
                             padding: const EdgeInsets.all(10.0),
                             maximumSize: const Size.fromWidth(200.0),
                             animationDuration: const Duration(milliseconds: 100),
@@ -571,7 +580,7 @@ class _ChangeDatabaseState extends State<ChangeDatabase> {
                         Text(_tittleFri(), style: const TextStyle(fontSize: 17, fontFamily: 'Lato'), textAlign: TextAlign.center),
                         const SizedBox(height: 10),
                         TextField(
-                          cursorColor: const Color.fromRGBO(8, 65, 92, 1),
+                          cursorColor: const Color.fromRGBO(32, 78, 74, 1),
                           scrollPadding: const EdgeInsets.all(10.0),
                           enabled: true,
                           scrollPhysics: const BouncingScrollPhysics(),
@@ -595,7 +604,7 @@ class _ChangeDatabaseState extends State<ChangeDatabase> {
                         Text(_descriptionFri(), style: const TextStyle(fontSize: 20, fontFamily: 'Lato'), textAlign: TextAlign.center),
                         const SizedBox(height: 10),
                         TextField(
-                          cursorColor: const Color.fromRGBO(8, 65, 92, 1),
+                          cursorColor: const Color.fromRGBO(32, 78, 74, 1),
                           scrollPadding: const EdgeInsets.all(10.0),
                           enabled: true,
                           scrollPhysics: const BouncingScrollPhysics(),
@@ -621,7 +630,7 @@ class _ChangeDatabaseState extends State<ChangeDatabase> {
                             primary: Colors.white,
                             onSurface: Colors.white,
                             shadowColor: Colors.black,
-                            backgroundColor: const Color.fromARGB(250, 8, 65, 92),
+                            backgroundColor: const Color.fromARGB(250, 32, 78, 74),
                             padding: const EdgeInsets.all(10.0),
                             maximumSize: const Size.fromWidth(200.0),
                             animationDuration: const Duration(milliseconds: 100),
@@ -654,13 +663,12 @@ class _ChangeDatabaseState extends State<ChangeDatabase> {
                         ),
                       ],
                     ),
-
+                    const SizedBox(height: 30),
                   TextButton(
                     style: TextButton.styleFrom(
-                      primary: Colors.white,
-                      onSurface: Colors.white,
+                      foregroundColor: Colors.black,
                       shadowColor: Colors.black,
-                      backgroundColor: const Color.fromARGB(250, 204, 41, 54),
+                      backgroundColor: const Color.fromARGB(250, 247, 198, 71),
                       padding: const EdgeInsets.all(10.0),
                       maximumSize: const Size.fromWidth(200.0),
                       animationDuration: const Duration(milliseconds: 100),
