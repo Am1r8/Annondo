@@ -62,7 +62,7 @@ class _thornhill_infState extends State<thornhill_inf> {
             gl.tueDes = _displayText;
           });
         });
-        List<String> tueDes = gl.monDes.split('.');
+        List<String> tueDes = gl.tueDes.split('.');
         String tueDes1 = tueDes.join("\n\n");
         return tueDes1;
     }
@@ -110,7 +110,7 @@ class _thornhill_infState extends State<thornhill_inf> {
             gl.thurDes = _displayText;
           });
         });
-        List<String> thurDes = gl.wenDes.split('.');
+        List<String> thurDes = gl.thurDes.split('.');
         String thurDes1 = thurDes.join(".\n\n");
         return thurDes1;
     }
@@ -126,7 +126,7 @@ class _thornhill_infState extends State<thornhill_inf> {
         return gl.friTittle;
     }
     _descriptionFri() {
-      _database.child('Thursday/description').onValue.listen((event) {
+      _database.child('Friday/description').onValue.listen((event) {
           final description = event.snapshot.value;
           if (!mounted) return;
           setState(() {
@@ -134,7 +134,7 @@ class _thornhill_infState extends State<thornhill_inf> {
             gl.friDes = _displayText;
           });
         });
-        List<String> friDes = gl.wenDes.split('.');
+        List<String> friDes = gl.friDes.split('.');
         String friDes1 = friDes.join(".\n\n");
         return friDes1;
     }

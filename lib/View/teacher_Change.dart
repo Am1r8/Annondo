@@ -2,7 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'global.dart' as gl;
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 
 class ChangeDatabase extends StatefulWidget {
@@ -13,12 +12,10 @@ class ChangeDatabase extends StatefulWidget {
 }
 
 class _ChangeDatabaseState extends State<ChangeDatabase> {
-
   final _database = FirebaseDatabase.instance.ref();
   late final TextEditingController _tittle;
   late final TextEditingController _des;
-
-  String dropdownvalue = "Monday";
+  String dropdownvalue = 'Monday';
   String stats = '';
   var week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
   @override
@@ -37,13 +34,7 @@ class _ChangeDatabaseState extends State<ChangeDatabase> {
 
   @override
   Widget build(BuildContext context) {
-    var date = DateTime.now();
-    late String day = DateFormat('EEEE').format(date);
-    if (day == 'Saturday' || day == 'Sunday') {
-      day = 'Monday';
-    }
-    dropdownvalue = day;
-    _tittleMon() {
+  _tittleMon() {
       _database.child('Monday/tittle').onValue.listen((event) {
           final tittle = event.snapshot.value;
           if (!mounted) return;
@@ -53,7 +44,7 @@ class _ChangeDatabaseState extends State<ChangeDatabase> {
           });
         });
         return gl.monTittle;
-      }
+    }
     _descriptionMon() {
       _database.child('Monday/description').onValue.listen((event) {
           final description = event.snapshot.value;
@@ -63,8 +54,10 @@ class _ChangeDatabaseState extends State<ChangeDatabase> {
             gl.monDes = _displayText;
           });
         });
-        return gl.monDes;
-      }
+        List<String> monDes = gl.monDes.split('.');
+        String monDes1 = monDes.join("\n\n");
+        return monDes1;
+    }
     _tittleTue() {
       _database.child('Tuesday/tittle').onValue.listen((event) {
           final tittle = event.snapshot.value;
@@ -75,7 +68,7 @@ class _ChangeDatabaseState extends State<ChangeDatabase> {
           });
         });
         return gl.tueTittle;
-      }
+    }
     _descriptionTue() {
       _database.child('Tuesday/description').onValue.listen((event) {
           final description = event.snapshot.value;
@@ -85,8 +78,10 @@ class _ChangeDatabaseState extends State<ChangeDatabase> {
             gl.tueDes = _displayText;
           });
         });
-        return gl.tueDes;
-      }
+        List<String> tueDes = gl.tueDes.split('.');
+        String tueDes1 = tueDes.join("\n\n");
+        return tueDes1;
+    }
     _tittleWed() {
       _database.child('Wednesday/tittle').onValue.listen((event) {
           final tittle = event.snapshot.value;
@@ -97,7 +92,7 @@ class _ChangeDatabaseState extends State<ChangeDatabase> {
           });
         });
         return gl.wenTittle;
-      }
+    }
     _descriptionWed() {
       _database.child('Wednesday/description').onValue.listen((event) {
           final description = event.snapshot.value;
@@ -107,8 +102,10 @@ class _ChangeDatabaseState extends State<ChangeDatabase> {
             gl.wenDes = _displayText;
           });
         });
-        return gl.wenDes;
-      }
+        List<String> wedDes = gl.wenDes.split('.');
+        String wedDes1 = wedDes.join(".\n\n");
+        return wedDes1;
+    }
     _tittleThur() {
       _database.child('Thursday/tittle').onValue.listen((event) {
           final tittle = event.snapshot.value;
@@ -119,7 +116,7 @@ class _ChangeDatabaseState extends State<ChangeDatabase> {
           });
         });
         return gl.thurTittle;
-      }
+    }
     _descriptionThur() {
       _database.child('Thursday/description').onValue.listen((event) {
           final description = event.snapshot.value;
@@ -129,8 +126,10 @@ class _ChangeDatabaseState extends State<ChangeDatabase> {
             gl.thurDes = _displayText;
           });
         });
-        return gl.thurDes;
-      }
+        List<String> thurDes = gl.thurDes.split('.');
+        String thurDes1 = thurDes.join(".\n\n");
+        return thurDes1;
+    }
     _tittleFri() {
       _database.child('Friday/tittle').onValue.listen((event) {
           final tittle = event.snapshot.value;
@@ -141,9 +140,9 @@ class _ChangeDatabaseState extends State<ChangeDatabase> {
           });
         });
         return gl.friTittle;
-      }
+    }
     _descriptionFri() {
-      _database.child('Thursday/description').onValue.listen((event) {
+      _database.child('Friday/description').onValue.listen((event) {
           final description = event.snapshot.value;
           if (!mounted) return;
           setState(() {
@@ -151,11 +150,12 @@ class _ChangeDatabaseState extends State<ChangeDatabase> {
             gl.friDes = _displayText;
           });
         });
-        return gl.friDes;
-      }
+        List<String> friDes = gl.friDes.split('.');
+        String friDes1 = friDes.join(".\n\n");
+        return friDes1;
+    }
 
     return RefreshIndicator(
-
       onRefresh: () async {
         await Future.delayed(const Duration(seconds: 2));
       },
